@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+
+<div id="x">
+		<h2>Student Result</h2>
+
+
+			<input type="number" v-model="mark" placeholder="Enter mark">
+			<br><br>
+
+			<button @click="CheckResult">Check Result</button>
+
+			<h3>{{ message }}</h3>
+
+		</div>
+
+		<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+		<script>
+			const app =Vue.createApp({
+				data(){
+					return{
+						mark:0,
+						message:""
+					}
+				},
+
+				methods:{
+					CheckResult(){
+						if(this.mark >=40){
+							this.message="pass"
+
+						}else{
+							this.message="Fail"
+						}
+					}
+				}
+			})
+
+			app.mount("#x")
+		</script>
+
+
+
+</body>
+</html>
